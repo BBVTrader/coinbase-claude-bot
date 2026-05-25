@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/robertbiddlev/coinbase-claude-bot/**)",
+      "Bash(node -e ' *)",
+      "Bash(python3 *)",
+      "Bash(node --input-type=module)",
+      "Bash(COINBASE_KEY_FILE=/Users/robertbiddlev/Downloads/cdp_api_key.json SUPABASE_URL=disabled SUPABASE_SERVICE_KEY=disabled node --input-type=module)"
+    ]
+  }
+}

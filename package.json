@@ -1,0 +1,11 @@
+{
+  "name": "bybit-claude-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "install:mcp": "cd mcp-server && npm install",
+    "entry-scan":  "node scripts/entry-scan.js",
+    "monitor":     "node scripts/position-monitor.js",
+    "test:mcp":    "echo '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/list\"}' | node mcp-server/src/server.js"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "bybit-mcp-server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "@coinbase/coinbase-sdk": "^0.25.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "coinbase-api": "^1.1.11",
+    "jsonwebtoken": "^9.0.3"
+  }
+}

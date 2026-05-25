@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "coinbase": {
+      "command": "node",
+      "args": [
+        "/Users/robertbiddlev/coinbase-claude-bot/mcp-server/src/server.js"
+      ],
+      "env": {
+        "COINBASE_KEY_FILE": "/Users/robertbiddlev/Downloads/cdp_api_key.json",
+        "SUPABASE_URL": "disabled",
+        "SUPABASE_SERVICE_KEY": "disabled",
+        "KILL_SWITCH_PATH": "/tmp/HALT_TRADING",
+        "MAX_NOTIONAL_PCT": "0.30",
+        "MAX_CONCURRENT": "3",
+        "PRICE_SANITY_PCT": "0.02"
+      }
+    }
+  }
+}
