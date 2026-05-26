@@ -63,12 +63,28 @@ export class CoinbaseClient {
   async getWalletBalance() {
     const data = await this._client.getAccounts({ limit: 250 });
     const accounts = data.accounts ?? [];
-    const usd = accounts.find(a => a.currency === 'USD') ?? {};
-    const totalEquity = accounts.reduce((sum, a) => sum + parseFloat(a.available_balance?.value ?? 0), 0);
+    const usdAccount = accounts.find(a => a.currency === 'USD') ?? {};
+    const availableUSD = parseFloat(usdAccount.available_balance?.value ?? 0);
+
+    // Convert each holding to USD using live prices
+    let totalEquityUSD = availableUSD;
+    for (const a of accounts) {
+      const bal = parseFloat(a.available_balance?.value ?? 0);
+      if (!bal || a.currency === 'USD') continue;
+      if (a.currency === 'USDC' || a.currency === 'USDT' || a.currency === 'DAI') {
+        totalEquityUSD += bal; // stablecoins are 1:1
+        continue;
+      }
+      try {
+        const ticker = await this.getTicker(`${a.currency}-USD`);
+        if (ticker.last_price > 0) totalEquityUSD += bal * ticker.last_price;
+      } catch { /* skip illiquid/unlisted assets */ }
+    }
+
     return {
-      equity: totalEquity,
-      available: parseFloat(usd.available_balance?.value ?? 0),
-      wallet_balance: parseFloat(usd.available_balance?.value ?? 0),
+      equity: totalEquityUSD,
+      available: availableUSD,
+      wallet_balance: availableUSD,
       unrealised_pnl: 0,
       margin_ratio: 0
     };
