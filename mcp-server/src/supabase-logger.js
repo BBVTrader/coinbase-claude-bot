@@ -114,7 +114,6 @@ export class SupabaseLogger {
     await this._insert('equity_snapshots', {
       equity_usd:     wallet.equity,
       available_usd:  wallet.available,
-      unrealised_pnl: wallet.unrealised_pnl,
       open_positions: positions.length
     });
   }

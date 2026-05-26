@@ -7,8 +7,8 @@
       ],
       "env": {
         "COINBASE_KEY_FILE": "/Users/robertbiddlev/Downloads/cdp_api_key.json",
-        "SUPABASE_URL": "disabled",
-        "SUPABASE_SERVICE_KEY": "disabled",
+        "SUPABASE_URL": "https://ldmpnkukomqlllfdxqjj.supabase.co",
+        "SUPABASE_SERVICE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbXBua3Vrb21xbGxsZmR4cWpqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTc1NDg4MSwiZXhwIjoyMDk1MzMwODgxfQ.eZ4hA7eMaAnLlRCceVxHtpzrTxnp-WggSgupDm0VNQE",
         "KILL_SWITCH_PATH": "/tmp/HALT_TRADING",
         "MAX_NOTIONAL_PCT": "0.30",
         "MAX_CONCURRENT": "3",
