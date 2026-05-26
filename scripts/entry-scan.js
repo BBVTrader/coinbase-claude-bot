@@ -31,9 +31,15 @@ async function run() {
     const prompt = "You are running an entry scan cycle. Read CLAUDE.md for your full strategy, then execute the entry scan cycle. Current UTC time: "+new Date().toISOString();
     const mcpConfig = pathResolve(dirname(fileURLToPath(import.meta.url)), "../claude-config/mcp.json");
     const output = await new Promise((resolve, reject) => {
+      const spawnEnv = {
+        ...process.env,
+        PATH: "/usr/local/bin:/usr/bin:/bin",
+        HOME: process.env.HOME || "/Users/robertbiddlev",
+        USER: process.env.USER || "robertbiddlev",
+      };
       const p = spawn(CLAUDE, ["--print", "--dangerously-skip-permissions", "--mcp-config", mcpConfig, "--", prompt], {
         cwd: process.env.STRATEGY_DIR,
-        env: { ...process.env, PATH: "/usr/local/bin:/usr/bin:/bin" },
+        env: spawnEnv,
         timeout: 300000
       });
       let out = "";
