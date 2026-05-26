@@ -1,11 +1,11 @@
 import { spawn } from "child_process";
 import { readFileSync } from "fs";
-import { resolve, dirname } from "path";
+import { resolve as pathResolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
 // Load .env before importing modules that capture env vars at module scope.
 // Shell env may contain stale placeholder values — override them here.
-const envPath = resolve(dirname(fileURLToPath(import.meta.url)), "../.env");
+const envPath = pathResolve(dirname(fileURLToPath(import.meta.url)), "../.env");
 try {
   readFileSync(envPath, "utf8").split("\n").forEach(line => {
     const m = line.match(/^([^#][^=]*)=(.*)/);
@@ -29,8 +29,9 @@ async function run() {
   console.log("["+new Date().toISOString()+"] Entry scan starting");
   try {
     const prompt = "You are running an entry scan cycle. Read CLAUDE.md for your full strategy, then execute the entry scan cycle. Current UTC time: "+new Date().toISOString();
+    const mcpConfig = pathResolve(dirname(fileURLToPath(import.meta.url)), "../claude-config/mcp.json");
     const output = await new Promise((resolve, reject) => {
-      const p = spawn(CLAUDE, ["--print", "--dangerously-skip-permissions", prompt], {
+      const p = spawn(CLAUDE, ["--print", "--dangerously-skip-permissions", "--mcp-config", mcpConfig, "--", prompt], {
         cwd: process.env.STRATEGY_DIR,
         env: { ...process.env, PATH: "/usr/local/bin:/usr/bin:/bin" },
         timeout: 300000
