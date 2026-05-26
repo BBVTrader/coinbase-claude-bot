@@ -96,3 +96,37 @@ RISK GATE: [all clear | X blocked]
 Calm, methodical, unemotional. No chasing. No revenge trading.
 No setups = report "no setups found" and exit. That is correct.
 Patience is the edge.
+
+## Breakout vs Deviation setup
+
+This is a separate setup type that runs alongside the standard swing trade criteria.
+
+### Definitions
+- Range High zone top: highest wick over the ranging period
+- Range High confirmation: highest daily close over the ranging period
+- Decision zone: the gap between close high and wick high
+- Range duration: minimum 50 days sideways to qualify
+
+### Weekly 12/25 EMA filter
+- Price ABOVE weekly 12 AND 25 EMA → Breakout bias → longs only
+- Price BELOW weekly 12 OR 25 EMA → Deviation bias → shorts or avoid
+
+### Breakout (above weekly 12/25 EMAs)
+- Range 50+ days, prior failed attempt at Range High
+- Current candle CLOSES above the wick high
+- Entry: close above Range High or first retest as support
+- Stop: below Range High zone
+- Target: range height added to breakout
+- Label: BREAKOUT
+
+### Deviation (below weekly 12/25 EMAs)
+- Range 50+ days, price approaching Range High from below
+- 2nd retest = deviation likely, enter short
+- 3rd retest = high probability, strong short
+- Entry: short 2nd or 3rd retest
+- Stop: above wick high
+- Target: range midpoint or low
+- Label: DEVIATION
+
+### Priority
+BREAKOUT and DEVIATION setups override standard criteria. Higher conviction.
