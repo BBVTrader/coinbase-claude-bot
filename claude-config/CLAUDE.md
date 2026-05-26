@@ -130,3 +130,34 @@ This is a separate setup type that runs alongside the standard swing trade crite
 
 ### Priority
 BREAKOUT and DEVIATION setups override standard criteria. Higher conviction.
+
+## Additional signal filters
+
+### #1 Divergence Detector
+Bullish div: price lower low + RSI higher low (RSI below 50) → label BULL DIV → high conviction buy
+Bearish div: price higher high + RSI lower high (RSI above 50) → label BEAR DIV → supports shorts
+Check on 4H chart using last 2 swing highs/lows.
+
+### #2 Multi-Signal Entry (Conviction filter)
+All 3 must be true for HIGH CONVICTION:
+1. RSI(14) on 4H below 40 (buys) or above 60 (sells)
+2. Price above 200 EMA (buys) or below (sells)
+3. Volume at least 1.5x the 20-period average
+All 3: size 1.5% risk. Two: 1% risk. One: pass.
+
+### #4 BTC Dominance Signal
+BTC.D rising above its 10 EMA → favour BTC, cut alt size 50% → note BTC.D RISING
+BTC.D falling below its 10 EMA → alt season, full size on alts → note BTC.D FALLING
+Check every scan cycle.
+
+### #6 Smart Money Volume
+Volume 3x+ the 50-period average = whale candle
+Bullish whale + long setup → WHALE CONFIRM → HIGH CONVICTION
+Bearish whale + long setup → WHALE AGAINST → do not enter
+
+### Conviction scoring (0-4)
++1 RSI divergence aligned
++1 All 3 multi-signal conditions met
++1 BTC.D supports the trade
++1 Whale volume confirms
+4/4 = HIGH CONVICTION (1.5% risk) | 3/4 = STANDARD (1%) | 2/4 or less = PASS
