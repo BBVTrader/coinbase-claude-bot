@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: kalshi-trader
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: bash start.sh
+    envVars:
+      - key: KALSHI_API_KEY
+        sync: false
+      - key: KALSHI_API_SECRET
+        sync: false
+      - key: PAPER_TRADE
+        value: "false"
+      - key: SCANNER_URL
+        value: "https://kalshi-trader.onrender.com"
+      - key: PORT
+        value: "10000"
+    healthCheckPath: /
+    autoDeploy: true
