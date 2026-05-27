@@ -5,7 +5,28 @@
       "Bash(node -e ' *)",
       "Bash(python3 *)",
       "Bash(node --input-type=module)",
-      "Bash(COINBASE_KEY_FILE=/Users/robertbiddlev/Downloads/cdp_api_key.json SUPABASE_URL=disabled SUPABASE_SERVICE_KEY=disabled node --input-type=module)"
+      "Bash(COINBASE_KEY_FILE=/Users/robertbiddlev/Downloads/cdp_api_key.json SUPABASE_URL=disabled SUPABASE_SERVICE_KEY=disabled node --input-type=module)",
+      "Bash(node --env-file=.env scripts/entry-scan.js)",
+      "Bash(node --env-file=.env -e \"console.log\\('SUPABASE_URL:', process.env.SUPABASE_URL?.slice\\(0,30\\)\\)\")",
+      "Bash(node --env-file=.env -e \"console.log\\('URL:', process.env.SUPABASE_URL\\)\")",
+      "Bash(env)",
+      "Read(//etc/**)",
+      "Bash(launchctl getenv *)",
+      "Bash(node scripts/entry-scan.js)",
+      "Bash(curl -s 'https://ldmpnkukomqlllfdxqjj.supabase.co/rest/v1/equity_snapshots?select=equity_usd,available_usd,open_positions,created_at&order=created_at.desc&limit=3' -H 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbXBua3Vrb21xbGxsZmR4cWpqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTc1NDg4MSwiZXhwIjoyMDk1MzMwODgxfQ.eZ4hA7eMaAnLlRCceVxHtpzrTxnp-WggSgupDm0VNQE' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbXBua3Vrb21xbGxsZmR4cWpqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTc1NDg4MSwiZXhwIjoyMDk1MzMwODgxfQ.eZ4hA7eMaAnLlRCceVxHtpzrTxnp-WggSgupDm0VNQE')",
+      "Bash(tee /tmp/entry-scan.log)",
+      "Bash(/usr/local/bin/claude --help)",
+      "Bash(curl -s 'https://ldmpnkukomqlllfdxqjj.supabase.co/rest/v1/equity_snapshots?select=equity_usd,open_positions,created_at&order=created_at.desc&limit=2' -H 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbXBua3Vrb21xbGxsZmR4cWpqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTc1NDg4MSwiZXhwIjoyMDk1MzMwODgxfQ.eZ4hA7eMaAnLlRCceVxHtpzrTxnp-WggSgupDm0VNQE' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbXBua3Vrb21xbGxsZmR4cWpqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTc1NDg4MSwiZXhwIjoyMDk1MzMwODgxfQ.eZ4hA7eMaAnLlRCceVxHtpzrTxnp-WggSgupDm0VNQE')",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(COINBASE_KEY_FILE=/Users/robertbiddlev/Downloads/cdp_api_key.json SUPABASE_URL=https://ldmpnkukomqlllfdxqjj.supabase.co SUPABASE_SERVICE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbXBua3Vrb21xbGxsZmR4cWpqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTc1NDg4MSwiZXhwIjoyMDk1MzMwODgxfQ.eZ4hA7eMaAnLlRCceVxHtpzrTxnp-WggSgupDm0VNQE node /Users/robertbiddlev/coinbase-claude-bot/mcp-server/src/server.js)",
+      "Bash(kill %1)",
+      "Bash(wait)",
+      "Bash(awk *)",
+      "Bash(node /Users/robertbiddlev/coinbase-claude-bot/scripts/entry-scan.js)",
+      "Read(//Users/robertbiddlev/kalshi-bot/**)",
+      "Bash(node --env-file=.env src/bot.js)",
+      "Bash(curl -s https://api.supabase.com/v1/projects/ldmpnkukomqlllfdxqjj/database/query -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkbXBua3Vrb21xbGxsZmR4cWpqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTc1NDg4MSwiZXhwIjoyMDk1MzMwODgxfQ.eZ4hA7eMaAnLlRCceVxHtpzrTxnp-WggSgupDm0VNQE' -H 'Content-Type: application/json' -d '{\"query\": __CMDSUB_OUTPUT__')"
     ]
   }
 }
